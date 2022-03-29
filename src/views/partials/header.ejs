@@ -1,0 +1,42 @@
+<header id="main-header">
+        <section id="header-top">
+            <figure id="logo">
+                <img src="/images/fabrilogo2.jpg" id="logoHOW"/>
+                
+            </figure>
+
+            <form action="/search" method="GET" id="buscador">
+                <input type="text" name="keywords" placeholder="Buscar tu producto, marcas y más" id="buscador-input">
+                <label for="buscador-input" id="buscador-boton"><i class="fas fa-search" aria-hidden="true"></i></label>
+            </form>
+        </section>
+        
+        <nav id="menu-copa">
+            <a href="#main-nav">Menu <i class="fa-solid fa-wine-glass"></i></a>
+        </nav>
+        <nav id="main-nav" >
+            <section id="nav-left">
+                <a href="/" class="link">Red label</a>
+                <a href="/" class="link">Black label</a>
+                <a href="/" class="link">Double Black label</a>
+                <a href="/" class="link">Green label</a>
+                <a href="/" class="link">Blue label</a>
+            </section>
+            <section id="nav-right">
+                <% if (user) { %>
+                    <a href ="/users/profile" class="link"><i class="fa-solid fa-user"></i> Bienvenido <%= user.firstName %>!</a>
+                
+                <a href ="/users/logout" class="link">Cerrar Sesión</a>
+
+                <% } else { %>
+                    <a href="/users/register" class="link">Crear cuenta</a>
+                    <a href="/users/login" class="link">Iniciar sesión</a>
+                    
+                <% } %>
+            </section>
+            <section>
+                <a href="#" class="close-menu">Cerrar</i></a>
+            </section>
+        </nav>
+        <script src="../public/js/header.js"></script>
+    </header>

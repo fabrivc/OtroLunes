@@ -1,0 +1,99 @@
+<head>
+    <%- include('../partials/head.ejs')  %>
+
+</head>
+
+    <!-- <link rel="stylesheet" href="/css/header.css"/> -->
+    
+    <body>
+        <%- include('../partials/header.ejs') %>
+        <main>
+            <%- include('../partials/styles.ejs') %>
+            <!-- <link rel="stylesheet" href="/css/users/register.css"/> -->
+            <form action="/users/register" method="POST" class="formulario1" enctype="multipart/form-data" id="form">
+                <nav class="navRegister">
+                    <a href="#" class="subtitulos">Inicio</a>
+                    <span class="divider"> > </span>
+                    <a href="/users/login" class="subtitulos">Mi cuenta</a>
+                    <span class="divider"> > </span>
+                    <a href="/users/register" class="subtitulos">Crear cuenta</a>
+                </nav>
+                <div class="titulo"><h1> <%- title %>  </h1></div>
+          
+                <div class="control-formulario">
+                    <input type="text" name="firstName" placeholder="Nombre completo" minlength="3" class="control inputs2"  required="" id="firstName">
+                    <% if (locals.errors && errors.nombre) { %>
+                        <p class="errores"><%= errors.nombre.msg %> </p>
+                    <% } %>
+                </div>
+                <div class="control-formulario">
+                    <input type="text" name="lastName" placeholder="Apellido completo" minlength="3" class="control inputs2" required="" id="lastName">
+                </div>
+                <div class="control-formulario">
+                    <input type="tel" name="phone" placeholder="Teléfono" class="control inputs2" required="" id="phone">  
+                </div>
+                <div class="control-formulario">
+                    <input type="text" name="adress" placeholder="Domicilio" minlength="3" class="control inputs2" required="" id="adress">
+                </div>
+                <div class="control-formulario">
+                    <input type="email" name="email" placeholder="E-mail" class="control inputs2" required="" id="email">
+                </div>
+                <div class="control-formulario">
+                    <input type="password" name="password" placeholder="Contraseña" class="control inputs2" required="" id="password=">
+                </div>
+                <div class="control-formulario2">
+                    <legend class="">Seleccione su imagen de perfil<legend>
+                    <input type="file" class="avatar" name="imagenUsuario">
+                </div>
+                
+                <br>
+                <section>
+                    <% if (locals.errors && errors.firstName) { %>
+                        <p class="errors">
+                            <%= errors.firstName.msg %>
+                        </p>
+                        <% } %>
+                            <% if (locals.errors && errors.lastName) { %>
+                                <p class="errors">
+                                    <%= errors.lastName.msg %>
+                                </p>
+                                <% } %>
+
+                                    <% if (locals.errors && errors.phone) { %>
+                                        <p class="errors">
+                                            <%= errors.phone.msg %>
+                                        </p>
+                                        <% } %>
+
+                                        <% if (locals.errors && errors.adress) { %>
+                                            <p class="errors">
+                                                <%= errors.adress.msg %>
+                                            </p>
+                                            <% } %>
+
+                                            <% if (locals.errors && errors.email) { %>
+                                                <p class="errors">
+                                                    <%= errors.email.msg %>
+                                                </p>
+                                            <% } %>
+
+                                            <% if (locals.errors && errors.password) { %>
+                                                <p class="errorvalidacion">
+                                                    <%= errors.password.msg %>
+                                                </p>
+                                                <% } %>
+
+                </section>
+
+                <!-- <div class="control-formulario">
+                    <input type="password" name="repetirPass" placeholder="Repetir contraseña" class="control" required="">
+                </div> -->
+                <button type="submit" class="boton-formulario">CREAR CUENTA</button>
+                <div class="subtitulos"><p class="mt-3 text-center">¿Ya tenés una cuenta? <a href="/users/login" class="subtitulos"><b>Iniciá sesión</b></a></p></div>
+            </form>
+    </main>
+    <!-- <%- include('../partials/footer.ejs')  %> -->
+    <script src = "../js/register.js"></script>
+</body>
+</html>
+
