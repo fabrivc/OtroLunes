@@ -40,12 +40,12 @@ input.success{
 section.errores{
     color: red
 }
-.formulario {
+.formulario1 {
     width: 100%;
     padding: 20px 20px;
     background-color: white;
-    
     text-align: center;
+    margin-bottom:200px;
 }
 .subtitulos, 
 .divider{
@@ -60,7 +60,6 @@ section.errores{
     color: #736E6E;
     font-size: 25px;
     font-weight: normal;
-    margin-left: 640px;
     padding: 5px;
 }
 .control-formulario {
@@ -84,7 +83,7 @@ section.errores{
     border-radius: 5px;
 }
 .boton-formulario{
-    width: 100%;
+    width: 80%;
     background-color: #f5f5f5;
     border: solid 3px #BAB7B7;
     font-size: 20px;
@@ -92,7 +91,6 @@ section.errores{
     padding: 5px 10px;
     border-radius: 5px;
     margin-bottom: 30px;
-    margin-left: 50px;
 }
 .boton-formulario:hover{
     transform: translatey(3px);
@@ -154,7 +152,6 @@ section.errores{
     }
     .boton-formulario {
         font-size: 20px;
-        margin-left: auto;
     }
 }
 }
