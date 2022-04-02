@@ -13,7 +13,9 @@ main{
     width: 100%;
     
 }
-
+.bannerlist{
+    color:red 
+}
 .avatar{
     width:20%;
     border: solid 2px #750C0C;

@@ -9,14 +9,18 @@
 }
 
 a{
+    color: black;
     text-decoration: none;
+    pointer-events: none;
+    text-align: center;
+    font-size: 20px;
 }
 
-main {
-    background-color: white;
+/* main {
+    /* background-color: white; */
   
     
-}
+ */
 .bienvenida{
     margin: 50px;
     padding: auto;

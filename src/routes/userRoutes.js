@@ -41,13 +41,15 @@ router.post('/access',userControllers.access);
 router.get('/profile', userControllers.profile);
 
 //Listado de Usuarios
-router.get('/userslist', userControllers.list);
+router.get('/list', userControllers.list);
 
 //Desloguear Usuario
 router.get('/logout',userControllers.logout);
 
 //Editar un Usuario
-router.get('/edit', userControllers.edit)
+router.get('/edit', userControllers.edit);
+router.get('/edit', userControllers.editList);
+router.post('/userUpdate/', userControllers.editList);
 router.post('/userUpdate/', userControllers.userUpdate);
 
 //Eliminar un Usuario

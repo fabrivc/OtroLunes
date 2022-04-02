@@ -1,15 +1,84 @@
-<%- include('./partials/head.ejs')  %>
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head.ejs') %>
+
     <body>
-        <%- include('./partials/header.ejs') %>
-        <link rel='stylesheet' href='/stylesheets/list.css' />
-        <h1><% = Usuarios registrados %></h1>
-        <ul>
-            <% for (let i=0; i<users.length;i++){ % >
-            <li>
-            <a href = "users/detail/ <% users[i].id %>"><%= users[i].name %></a>
-            </li>  
-            % } %
-        </ul> 
-    <%- include('./partials/footer.ejs')  %>   
-</body>
+        <link rel="stylesheet" href="/css/users/profile.css"/>
+        <%- include("../partials/header") %>
+            <main>
+
+                <section class="contbannerlist">
+                    <h2 class="bannerlist">
+                        <%= locals.title ? title : null %>
+                    </h2>
+
+                </section>
+
+                <% if (user !=null && user.admin) { %>
+                    <!-- <form class="search" action="/users/search" method="get">
+                        <i class="fas fa-search"></i>
+                        <input class="barraB" type="search" name="buscar" placeholder="Buscá por Nombre o Apellido">
+                        <button class="boton1" type="submit">Buscar</button>
+                    </form> -->
+                    <!-- <button class="switch" id="switch">
+                        <span>
+                            <i class="fa fa-sun"></i>
+                        </span>
+                        <span>
+                            <i class="fa fa-moon"></i>
+                        </span>
+                    </button> -->
+                    <section class="usersList">
+                        <% if (locals.users) { %>
+                            <% if (users.length> 0) { %>
+                                <% users.forEach(user=> { %>
+                                    <article class="generalList">
+                                        <a class="contentlista" href="/users/profile/<%= user.id %> ">
+                                            <% if (user.image) { %>
+                                                <img id="imgCentral"src="/avatars/<%= user.image.url %> " alt="photo<%= user.email %> "class="avatar">
+                                                <% } %>
+                                                    <ul class="userList2">
+                                                        <li class="liUsers">Name: <%= user.firstName %>
+                                                        </li>
+                                                        <li class="liUsers">Last Name: <%= user.lastName %>
+                                                        </li>
+                                                        <li class="liUsers">E-mail: <%= user.email %>
+                                                        </li>
+                                                        <li class="liUsers">Adress: <%= user.adress %>
+                                                        </li>
+                                                        <li class="liUsers">Phone: <%= user.phone %>
+                                                        </li>
+                                                    </ul>
+                                                    <section>
+                                                        <article class="datosProfile">
+                                                            <a class="boton-formulario" href='/users/edit/'>MODIFICAR</a>
+                                                        </article>
+                                                    </section>
+                                        </a>
+                                    </article>
+                                <% }) %>
+                             <% } %>
+                                      
+                        <% } %>
+                       
+                    </section>
+                        <!-- <form action="/users/register" method="post">
+                            <button class= "boton-logout" type="submit">LOGOUT</button>
+                        </form> -->
+                                   
+            <% } else { %>
+                    <section class="contlistado">
+                        <h1 class="titulolist">Tenés que ser admin para ver la lista de usuarios</h1>
+                    </section>
+                     
+                     <form action="/users/register" method="post">
+                         <button class= "boton-logout" type="submit">LOGOUT</button>
+                     </form>
+                <% } %>
+            </main>
+
+            <%- include("../partials/footer") %>
+            <!-- <script src = "../js/user.js"></script> -->
+    </body>
+
 </html>
