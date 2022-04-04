@@ -17,7 +17,7 @@
                 <% if (user !=null && user.admin) { %>
                  
                     <section class="usersList">
-                        <% if (locals.users) { %>
+                        <% if (locals.users && !user.admin) { %>
                             <% if (users.length> 0) { %>
                                 <% users.forEach(user=> { %>
                                     <article class="generalList">
@@ -49,14 +49,20 @@
                                       
                         <% } %>
                        
-                    </section>       
+                    </section>
+                
+                                   
             <% } else { %>
                     <section class="contlistado">
                         <h1 class="titulolist">Tenés que ser admin para ver la lista de usuarios</h1>
                     </section>
+                     
+                     
                 <% } %>
             </main>
+
             <%- include("../partials/footer") %>
+          
     </body>
 
 </html>

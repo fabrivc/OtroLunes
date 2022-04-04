@@ -182,11 +182,11 @@ const userController = {
   })
   .catch(error => res.send(error))
 },
-editList: (req, res) => {
+/*editList: (req, res) => {
 
   db.User.findByPk(
   { where: 
-    { email: req.user.email} })
+    { email: req.session.user.email} })
     .then(users => {
       res.render('users/userUpdate', {
         styles: ["userUpdate"],
@@ -195,7 +195,7 @@ editList: (req, res) => {
       })
     })
     .catch(error => res.send(error))
-},
+}, */
 
     userUpdate: (req, res) =>{
       //return res.send(req.body)

@@ -8,6 +8,7 @@ const path = require('path');
 
 //Imagenes con Multer
 const multer = require('multer');
+const adminController = require('../controllers/adminController');
 //const userController = require('../controllers/user');
 const multerDiskStorage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -40,16 +41,19 @@ router.post('/access',userControllers.access);
 //Perfil de Usuario
 router.get('/profile', userControllers.profile);
 
+router.get('/userList', adminController.update);
 //Listado de Usuarios
 router.get('/list', userControllers.list);
+router.get('/listComun', userControllers.list);
 
 //Desloguear Usuario
 router.get('/logout',userControllers.logout);
 
 //Editar un Usuario
 router.get('/edit', userControllers.edit);
+/*
 router.get('/edit', userControllers.editList);
-router.post('/userUpdate/', userControllers.editList);
+router.post('/userUpdate/', userControllers.editList); */
 router.post('/userUpdate/', userControllers.userUpdate);
 
 //Eliminar un Usuario

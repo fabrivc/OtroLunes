@@ -7,11 +7,15 @@
 }
 
 main{
-    background-color: rgb(85, 12, 24, 20%); ;
+     
     width: 100%;
    
 }
-
+h2.bannerlist{
+    color: #550c18;
+    font-size: 45px;
+    text-align: center;
+}
 .avatar{
     width:20%;
     border: solid 2px #550c18;
@@ -56,7 +60,9 @@ main{
 }
    
 .boton-formulario:link {
-    color: #550c18;;
+    color: #550c18;
+    width: 30%;
+
 }
   
 .boton-formulario:visited {
@@ -81,7 +87,7 @@ main{
 .datosProfile{
     color: #736E6E;
     font-size: 20px;
-    margin: 2rem;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
