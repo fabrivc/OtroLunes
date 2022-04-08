@@ -37,15 +37,17 @@ const adminController = {
         res.redirect('/users/list' + req.params.id)
     },
 
-    delete: (req, res) => {
-        db.User.destroy(
-            {
-                where: {
-                    id: req.params.id
-                }
-            })
-            res.redirect('/users');
-    }
+    // userDelete: (req,res) => {
+    //     res.clearCookie('userEmail');
+    //           req.id.destroy();
+    //       db.User.destroy(
+    //         {
+    //             where: {
+    //                 id: req.params.id
+    //             }
+    //         })
+    //         return res.redirect('/');
+    //   },
 }
 
 module.exports = adminController

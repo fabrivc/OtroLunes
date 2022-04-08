@@ -23,4 +23,4 @@ app.use(require('./middlewares/userLoggedMiddleware'));
 app.use('/', require('./routes/homeRoutes'));
 app.use('/products', require('./routes/productRoutes'));
 app.use('/users', require('./routes/userRoutes'));
-app.use(require('./routes/adminRoutes'));
+//app.use(require('./routes/adminRoutes'));

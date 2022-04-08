@@ -39,8 +39,23 @@
                                                     </ul>
                                                     <section>
                                                         <article class="datosProfile">
-                                                            <a class="boton-formulario" href="/users/profile/<%= user.id %> ">MODIFICAR</a>
+                                                            <a class="boton-formulario" href='/users/edit/'>MODIFICAR</a> 
                                                         </article>
+                                                        <br>
+                                                        <form action="/users/delete/<%- user.id %>?m=DELETE" method="post" class="agregar">
+                                                            <script>
+                                                                // Confirmacion del boton para borrar productos
+                                                                function confirmAction() {
+                                                                  let confirmAction = confirm("Está seguro que quiere eliminar el Usuario?");
+                                                                  if (confirmAction) {
+                                                                    alert("Eliminado Correctamente!");
+                                                                  } else {
+                                                                    event.preventDefault();
+                                                                  }
+                                                                }
+                                                              </script>
+                                                                <button type="submit" class="botonAgregar" id="delete" onclick="confirmAction()">BORRAR USUARIO</button>
+                                                         </form>
                                                     </section>
                                         </a>
                                     </article>

@@ -166,6 +166,8 @@ const userController = {
   })
   .catch(error => res.send(error))
 },
+
+    //Editar un usuario
     edit: (req, res) => {
       db.User.findOne(
         { where: 
@@ -218,23 +220,24 @@ const userController = {
 .catch(error => res.send(error))
 },
 
+
 userDelete: (req,res) => {
   res.clearCookie('userEmail');
-        req.session.destroy();
     db.User.destroy(
       {
           where: {
               id: req.params.id
           }
       })
-      return res.redirect('/');
+      return res.redirect('/user/profile');
 },
  
-    logout: (req,res) => {
-        res.clearCookie('userEmail');
-        req.session.destroy();
-        return res.redirect('/');
+logout: (req,res) => {
+  res.clearCookie('userEmail');
+  req.id.destroy();
+  return res.redirect('/');
 }
+
 }
 
 

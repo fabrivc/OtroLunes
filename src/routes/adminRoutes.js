@@ -11,14 +11,9 @@ const upload = multer({storage: multer.diskStorage({
 })})
 
 
-
 router.get('/edit/:id', adminController.edit);
 router.post('/userList/:id', adminController.update);
 router.post('/delete/:id', adminController.delete);
-
-
-
-
 
 
 module.exports = router
