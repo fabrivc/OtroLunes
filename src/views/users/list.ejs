@@ -42,7 +42,7 @@
                                                             <a class="boton-formulario" href='/users/edit/'>MODIFICAR</a> 
                                                         </article>
                                                         <br>
-                                                        <form action="/users/delete/<%- user.id %>?m=DELETE" method="post" class="agregar">
+                                                        <form action="/users/delete/<%- user.id %>?m=DELETE" method="post" class="datosProfile">
                                                             <script>
                                                                 // Confirmacion del boton para borrar productos
                                                                 function confirmAction() {
@@ -54,7 +54,7 @@
                                                                   }
                                                                 }
                                                               </script>
-                                                                <button type="submit" class="botonAgregar" id="delete" onclick="confirmAction()">BORRAR USUARIO</button>
+                                                                <button type="submit" class="boton-formulario" id="delete" onclick="confirmAction()">BORRAR USUARIO</button>
                                                          </form>
                                                     </section>
                                         </a>
